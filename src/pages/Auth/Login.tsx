@@ -38,7 +38,7 @@ export const Login: React.FC = () => {
             <form onSubmit={handleSubmit} className="space-y-5">
                 {error && (
                     <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl text-red-700 dark:text-red-400 text-sm flex items-start gap-3 animate-shake">
-                        <AlertCircle size={20} className="flex-shrink-0 mt-0.5" />
+                        <AlertCircle size={20} className="shrink-0 mt-0.5" />
                         <span>{error}</span>
                     </div>
                 )}
@@ -47,7 +47,6 @@ export const Login: React.FC = () => {
                     <Input
                         label="Email Address"
                         type="email"
-                        placeholder="you@example.com"
                         icon={Mail}
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -58,7 +57,6 @@ export const Login: React.FC = () => {
                     <Input
                         label="Password"
                         type="password"
-                        placeholder="••••••••"
                         icon={Lock}
                         value={formData.password}
                         onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -82,18 +80,18 @@ export const Login: React.FC = () => {
 
                 <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white font-bold py-3.5 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                    className="w-full bg-linear-to-r from-primary via-primary to-primary-dark hover:from-primary-dark hover:to-primary-dark text-white font-bold py-3.5 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                     disabled={loading}
                     aria-label="Sign in to your account"
                 >
                     {loading ? (
                         <>
                             <Loader2 size={20} className="animate-spin" />
-                            <span>Signing In...</span>
+                            <span>Authenticating...</span>
                         </>
                     ) : (
                         <>
-                            <span>Sign In</span>
+                            <span>Login to Account</span>
                             <ArrowRight size={20} />
                         </>
                     )}

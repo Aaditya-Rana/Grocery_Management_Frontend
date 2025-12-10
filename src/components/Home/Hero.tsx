@@ -6,8 +6,8 @@ export const Hero: React.FC = () => {
     return (
         <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
             {/* Background Shapes */}
-            <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-bl from-blue-50 to-transparent dark:from-blue-900/20 -z-10 rounded-bl-[100px]" />
-            <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-tr from-purple-50 to-transparent dark:from-purple-900/20 -z-10 rounded-tr-[100px]" />
+            <div className="absolute top-0 right-0 w-2/3 h-full bg-linear-to-bl from-blue-50 to-transparent dark:from-blue-900/20 -z-10 rounded-bl-[100px]" />
+            <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-linear-to-tr from-purple-50 to-transparent dark:from-purple-900/20 -z-10 rounded-tr-[100px]" />
 
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row items-center gap-12">
@@ -30,7 +30,7 @@ export const Hero: React.FC = () => {
                             </p>
 
                             <div className="flex flex-wrap gap-4">
-                                <button className="btn-primary py-4 px-8 text-lg flex items-center gap-2 shadow-lg shadow-blue-500/25">
+                                <button className="btn-primary py-4 px-8 text-lg flex items-center gap-2 shadow-lg shadow-primary/25">
                                     Start Shopping
                                     <ShoppingBag size={20} />
                                 </button>
@@ -67,7 +67,7 @@ export const Hero: React.FC = () => {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="relative z-10"
                         >
-                            <div className="relative aspect-square rounded-full bg-gradient-to-br from-orange-100 to-yellow-100 dark:from-orange-900/20 dark:to-yellow-900/20 p-8">
+                            <div className="relative aspect-square rounded-full bg-linear-to-br from-orange-100 to-yellow-100 dark:from-orange-900/20 dark:to-yellow-900/20 p-8">
                                 <img
                                     src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                                     alt="Fresh Grocery Bag"

@@ -71,7 +71,7 @@ export const Signup: React.FC = () => {
             <form onSubmit={handleSubmit} className="space-y-5">
                 {error && (
                     <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl text-red-700 dark:text-red-400 text-sm flex items-start gap-3 animate-shake">
-                        <AlertCircle size={20} className="flex-shrink-0 mt-0.5" />
+                        <AlertCircle size={20} className="shrink-0 mt-0.5" />
                         <span>{error}</span>
                     </div>
                 )}
@@ -80,7 +80,6 @@ export const Signup: React.FC = () => {
                     <Input
                         label="Full Name"
                         type="text"
-                        placeholder="John Doe"
                         icon={User}
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -91,7 +90,6 @@ export const Signup: React.FC = () => {
                     <Input
                         label="Email Address"
                         type="email"
-                        placeholder="you@example.com"
                         icon={Mail}
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -103,7 +101,6 @@ export const Signup: React.FC = () => {
                         <Input
                             label="Password"
                             type="password"
-                            placeholder="••••••••"
                             icon={Lock}
                             value={formData.password}
                             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -116,8 +113,8 @@ export const Signup: React.FC = () => {
                                 <div className="flex items-center justify-between mb-1">
                                     <span className="text-xs text-gray-600 dark:text-gray-400">Password strength:</span>
                                     <span className={`text-xs font-semibold ${passwordStrength.strength === 1 ? 'text-red-600' :
-                                            passwordStrength.strength === 2 ? 'text-yellow-600' :
-                                                'text-green-600'
+                                        passwordStrength.strength === 2 ? 'text-yellow-600' :
+                                            'text-green-600'
                                         }`}>
                                         {passwordStrength.label}
                                     </span>
@@ -135,7 +132,6 @@ export const Signup: React.FC = () => {
                     <Input
                         label="Confirm Password"
                         type="password"
-                        placeholder="••••••••"
                         icon={Lock}
                         value={formData.confirmPassword}
                         onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
@@ -146,8 +142,8 @@ export const Signup: React.FC = () => {
                     {/* Password Match Indicator */}
                     {formData.confirmPassword && (
                         <div className={`flex items-center gap-2 text-sm ${formData.password === formData.confirmPassword
-                                ? 'text-green-600 dark:text-green-400'
-                                : 'text-red-600 dark:text-red-400'
+                            ? 'text-green-600 dark:text-green-400'
+                            : 'text-red-600 dark:text-red-400'
                             }`}>
                             {formData.password === formData.confirmPassword ? (
                                 <>
@@ -166,18 +162,18 @@ export const Signup: React.FC = () => {
 
                 <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white font-bold py-3.5 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                    className="w-full bg-linear-to-r from-primary via-primary to-primary-dark hover:from-primary-dark hover:to-primary-dark text-white font-bold py-3.5 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                     disabled={loading}
                     aria-label="Create your account"
                 >
                     {loading ? (
                         <>
                             <Loader2 size={20} className="animate-spin" />
-                            <span>Creating Account...</span>
+                            <span>Creating Profile...</span>
                         </>
                     ) : (
                         <>
-                            <span>Create Account</span>
+                            <span>Start Your Journey</span>
                             <ArrowRight size={20} />
                         </>
                     )}

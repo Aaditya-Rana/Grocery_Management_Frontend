@@ -1,22 +1,31 @@
 :root {
-  /* Premium Color Palette (HSL) */
-  --primary: 220 70% 50%; /* Deep Royal Blue */
-  --primary-dark: 220 70% 40%;
-  --primary-light: 220 70% 95%;
+  /* Premium & Elegant Color Palette (HSL) */
+  /* Primary: Deep, sophisticated Navy/Slate Blue */
+  --primary: 222 35% 25%; 
+  --primary-dark: 222 35% 15%;
+  --primary-light: 222 35% 95%;
   
-  --secondary: 280 60% 50%; /* Elegant Purple */
-  --accent: 35 90% 55%; /* Gold/Amber for highlights */
+  /* Secondary: Muted Slate/Cool Gray for subdued elegance */
+  --secondary: 215 20% 45%;
   
-  --background: 220 20% 98%; /* Off-white/Light Gray */
+  /* Accent: Refined Gold/Amber for premium highlights (use sparingly) */
+  --accent: 38 60% 50%; 
+  
+  /* Backgrounds: Clean, high-end "Paper" feel */
+  --background: 210 20% 98%; /* Very subtle cool gray/white */
   --surface: 0 0% 100%; /* Pure White */
-  --surface-glass: 0 0% 100% / 0.8; /* Glassmorphism base */
   
-  --text-main: 220 40% 20%;
-  --text-muted: 220 20% 50%;
-  --text-light: 220 20% 95%;
+  /* Glassmorphism: Frosted, subtle, refined */
+  --surface-glass: 0 0% 100% / 0.75; 
+  
+  /* Typography: High contrast but not harsh black */
+  --text-main: 222 25% 15%; /* Deep Charcoal/Navy */
+  --text-muted: 220 15% 55%;
+  --text-light: 220 20% 98%;
 
-  --error: 0 80% 60%;
-  --success: 150 80% 40%;
+  /* Functional Colors */
+  --error: 350 70% 55%; /* Muted Red */
+  --success: 150 50% 40%; /* Forest Green */
 
   /* Spacing */
   --space-xs: 0.25rem;
@@ -26,13 +35,13 @@
   --space-xl: 2rem;
   --space-2xl: 3rem;
 
-  /* Shadows */
+  /* Shadows: Soft, diffused "Expensive" feeling shadows */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 12px -2px rgb(0 0 0 / 0.08), 0 2px 6px -2px rgb(0 0 0 / 0.04);
+  --shadow-lg: 0 12px 24px -6px rgb(0 0 0 / 0.12), 0 6px 10px -4px rgb(0 0 0 / 0.06);
+  --shadow-xl: 0 25px 50px -12px rgb(0 0 0 / 0.15);
   
-  /* Radius */
+  /* Radius: Refined curves */
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
@@ -42,13 +51,18 @@
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark {
-  --background: 220 30% 10%;
-  --surface: 220 25% 15%;
-  --surface-glass: 220 25% 15% / 0.8;
+  --background: 222 30% 10%; /* Deep Navy Black */
+  --surface: 222 25% 14%;
+  --surface-glass: 222 25% 14% / 0.8;
   
   --text-main: 220 20% 95%;
   --text-muted: 220 20% 65%;
+  
+  /* Adjust shadows for dark mode */
+  --shadow-md: 0 4px 12px -2px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 12px 24px -6px rgb(0 0 0 / 0.5);
 }

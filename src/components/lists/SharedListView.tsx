@@ -11,12 +11,12 @@ interface SharedListViewProps {
     onCompleteList: () => void;
 }
 
-export const SharedListView: React.FC<SharedListViewProps> = ({ 
-    list, 
-    items, 
+export const SharedListView: React.FC<SharedListViewProps> = ({
+    list,
+    items,
     shareData,
     onUpdateItemStatus,
-    onCompleteList 
+    onCompleteList
 }) => {
     const doneCount = items.filter(item => item.status === 'done').length;
     const progressPercentage = items.length > 0 ? Math.round((doneCount / items.length) * 100) : 0;
@@ -37,7 +37,7 @@ export const SharedListView: React.FC<SharedListViewProps> = ({
     return (
         <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden max-w-6xl mx-auto">
             {/* Header */}
-            <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6 text-white">
+            <div className="bg-linear-to-r from-primary to-primary-dark p-6 text-white">
                 <h1 className="text-3xl font-bold mb-2">{list.name}</h1>
                 <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
                     <div>
@@ -54,7 +54,7 @@ export const SharedListView: React.FC<SharedListViewProps> = ({
                     <div className="mt-3 md:mt-0">
                         <div className="w-48 bg-gray-200 rounded-full h-3 overflow-hidden">
                             <div
-                                className="bg-gradient-to-r from-blue-500 to-green-500 h-3 rounded-full transition-all duration-300"
+                                className="bg-linear-to-r from-primary to-secondary h-3 rounded-full transition-all duration-300"
                                 style={{ width: `${progressPercentage}%` }}
                             />
                         </div>
@@ -97,7 +97,7 @@ export const SharedListView: React.FC<SharedListViewProps> = ({
             {/* Footer */}
             <div className="p-4 bg-gray-50 border-t border-gray-100 space-y-3 max-w-6xl mx-auto">
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 flex items-start gap-2">
-                    <AlertCircle size={20} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                    <AlertCircle size={20} className="text-blue-600 shrink-0 mt-0.5" />
                     <p className="text-sm text-blue-700">
                         <span className="font-semibold">Tip:</span> Click on any item to cycle through its status (To Buy → In Progress → Done → Unavailable → Substituted)
                     </p>

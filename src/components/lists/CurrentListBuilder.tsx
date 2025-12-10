@@ -71,7 +71,7 @@ export const CurrentListBuilder: React.FC<CurrentListBuilderProps> = ({
         return (
             <div className="bg-white rounded-xl shadow-md border-2 border-blue-100 overflow-hidden">
                 {/* List Header */}
-                <div className="p-6 border-b border-gray-100 bg-gradient-to-r from-gray-50 to-white">
+                <div className="p-6 border-b border-gray-100 bg-linear-to-r from-gray-50 to-white">
                     <h2 className="text-2xl font-bold text-gray-900 mb-2">{list.name}</h2>
                     <p className="text-sm text-gray-500">Status: <span className="capitalize font-medium">{list.status}</span></p>
                 </div>
@@ -85,7 +85,7 @@ export const CurrentListBuilder: React.FC<CurrentListBuilderProps> = ({
                     <p className="text-gray-600 mb-8 max-w-sm mx-auto">Start by adding items to your shopping list. Click the button below to add your first item.</p>
                     <button
                         onClick={() => setShowAddItemForm(true)}
-                        className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
+                        className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-linear-to-r from-primary to-primary-dark text-white rounded-lg hover:from-primary-dark hover:to-primary-dark transition-all font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
                     >
                         <Plus size={24} />
                         <span className="text-lg">Add Your First Item</span>
@@ -127,7 +127,7 @@ export const CurrentListBuilder: React.FC<CurrentListBuilderProps> = ({
     return (
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
             {/* Header */}
-            <div className="p-6 border-b border-gray-100 bg-gradient-to-r from-gray-50 to-white flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div className="p-6 border-b border-gray-100 bg-linear-to-r from-gray-50 to-white flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div className="flex-1">
                     {isEditingName ? (
                         <input
@@ -136,7 +136,7 @@ export const CurrentListBuilder: React.FC<CurrentListBuilderProps> = ({
                             onChange={(e) => setListName(e.target.value)}
                             onBlur={() => setIsEditingName(false)}
                             autoFocus
-                            className="text-2xl font-bold text-gray-900 bg-transparent border-b-2 border-blue-500 focus:outline-none"
+                            className="text-2xl font-bold text-gray-900 dark:text-gray-100 bg-transparent border-b-2 border-primary focus:outline-none"
                         />
                     ) : (
                         <h2
@@ -191,7 +191,7 @@ export const CurrentListBuilder: React.FC<CurrentListBuilderProps> = ({
                     {onRefreshList && (
                         <button
                             onClick={onRefreshList}
-                            className="flex-1 sm:flex-none min-w-[120px] flex items-center justify-center gap-2 px-6 py-3 bg-blue-500 text-white hover:bg-blue-600 rounded-lg transition-colors font-semibold shadow-sm hover:shadow-md text-sm md:text-base whitespace-nowrap"
+                            className="flex-1 sm:flex-none min-w-[120px] flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white hover:bg-primary-dark rounded-lg transition-colors font-semibold shadow-sm hover:shadow-md text-sm md:text-base whitespace-nowrap"
                             aria-label="Refresh List"
                             title="Refresh to get latest updates"
                         >
@@ -249,7 +249,7 @@ export const CurrentListBuilder: React.FC<CurrentListBuilderProps> = ({
                 {!showAddItemForm ? (
                     <button
                         onClick={() => setShowAddItemForm(true)}
-                        className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 text-lg md:text-xl whitespace-nowrap"
+                        className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-linear-to-r from-primary to-primary-dark text-white rounded-lg hover:from-primary-dark hover:to-primary-dark transition-all font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 text-lg md:text-xl whitespace-nowrap"
                         aria-label="Add Item"
                     >
                         <Plus size={22} />
@@ -297,7 +297,7 @@ export const CurrentListBuilder: React.FC<CurrentListBuilderProps> = ({
 
                         <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-6">
                             <p className="text-sm text-blue-900 flex items-start gap-2">
-                                <span className="flex-shrink-0 text-lg">💡</span>
+                                <span className="shrink-0 text-lg">💡</span>
                                 <span><strong>How it works:</strong> Shopkeepers can click items to update their status (To Buy → In Progress → Done → Unavailable → Substituted)</span>
                             </p>
                         </div>
@@ -366,7 +366,7 @@ const AddItemForm: React.FC<AddItemFormProps> = ({ listId, onItemAdded, onCancel
                 value={itemData.name}
                 onChange={(e) => setItemData({ ...itemData, name: e.target.value })}
                 disabled={isLoading}
-                className="w-full px-3 py-2 border border-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
+                className="w-full px-3 py-2 border border-gray-200 dark:border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-primary disabled:bg-gray-100 dark:disabled:bg-gray-800 dark:bg-gray-800 dark:text-white"
             />
 
             <div className="grid grid-cols-2 gap-3">
@@ -377,7 +377,7 @@ const AddItemForm: React.FC<AddItemFormProps> = ({ listId, onItemAdded, onCancel
                     value={itemData.quantity}
                     onChange={(e) => setItemData({ ...itemData, quantity: e.target.value })}
                     disabled={isLoading}
-                    className="px-3 py-2 border border-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
+                    className="px-3 py-2 border border-gray-200 dark:border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-primary disabled:bg-gray-100 dark:disabled:bg-gray-800 dark:bg-gray-800 dark:text-white"
                 />
                 <input
                     type="text"
@@ -385,7 +385,7 @@ const AddItemForm: React.FC<AddItemFormProps> = ({ listId, onItemAdded, onCancel
                     value={itemData.unit}
                     onChange={(e) => setItemData({ ...itemData, unit: e.target.value })}
                     disabled={isLoading}
-                    className="px-3 py-2 border border-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
+                    className="px-3 py-2 border border-gray-200 dark:border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-primary disabled:bg-gray-100 dark:disabled:bg-gray-800 dark:bg-gray-800 dark:text-white"
                 />
             </div>
 
@@ -395,7 +395,7 @@ const AddItemForm: React.FC<AddItemFormProps> = ({ listId, onItemAdded, onCancel
                 value={itemData.notes}
                 onChange={(e) => setItemData({ ...itemData, notes: e.target.value })}
                 disabled={isLoading}
-                className="w-full px-3 py-2 border border-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
+                className="w-full px-3 py-2 border border-gray-200 dark:border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-primary disabled:bg-gray-100 dark:disabled:bg-gray-800 dark:bg-gray-800 dark:text-white"
             />
 
             <div className="flex gap-2">

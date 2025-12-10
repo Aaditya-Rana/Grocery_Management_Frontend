@@ -34,12 +34,12 @@ function getSocket() {
         console.log('[Socket] Connected successfully, ID:', socket?.id);
     });
 
-    socket.on('connect_error', (err) => {
+    socket.on('connect_error', (err: any) => {
         // eslint-disable-next-line no-console
         console.error('[Socket] Connect error:', err);
     });
 
-    socket.on('disconnect', (reason) => {
+    socket.on('disconnect', (reason: any) => {
         // eslint-disable-next-line no-console
         console.warn('[Socket] Disconnected:', reason);
     });

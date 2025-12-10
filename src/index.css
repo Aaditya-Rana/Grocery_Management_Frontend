@@ -12,7 +12,9 @@ body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: hsl(var(--background));
   color: hsl(var(--text-main));
-  line-height: 1.5;
+  line-height: 1.6;
+  /* Increased for elegance */
+  letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -45,8 +47,10 @@ textarea {
 
 .glass-panel {
   background: hsl(var(--surface-glass));
-  backdrop-filter: blur(12px);
-  border: 1px solid hsl(var(--surface) / 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  /* Clearer border */
   box-shadow: var(--shadow-lg);
 }
 
@@ -55,27 +59,36 @@ textarea {
   color: hsl(var(--text-light));
   padding: var(--space-sm) var(--space-lg);
   border-radius: var(--radius-md);
-  font-weight: 600;
-  transition: var(--transition-fast);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-primary:hover {
   background-color: hsl(var(--primary-dark));
   transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
 }
 
 .btn-secondary {
   background-color: transparent;
-  border: 1px solid hsl(var(--primary));
+  border: 1px solid hsl(var(--primary) / 0.3);
   color: hsl(var(--primary));
   padding: var(--space-sm) var(--space-lg);
   border-radius: var(--radius-md);
-  font-weight: 600;
-  transition: var(--transition-fast);
+  font-weight: 500;
+  transition: all var(--transition-normal);
 }
 
 .btn-secondary:hover {
-  background-color: hsl(var(--primary-light));
+  background-color: hsl(var(--primary) / 0.04);
+  border-color: hsl(var(--primary));
+  color: hsl(var(--primary-dark));
 }
 
 .text-gradient {

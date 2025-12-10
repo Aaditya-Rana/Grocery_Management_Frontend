@@ -61,7 +61,7 @@ export const FeaturedProducts: React.FC = () => {
                             viewport={{ once: true }}
                             className="group bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
                         >
-                            <div className="relative aspect-[4/3] mb-4 overflow-hidden rounded-xl bg-gray-100">
+                            <div className="relative aspect-4/3 mb-4 overflow-hidden rounded-xl bg-gray-100">
                                 <img
                                     src={product.image}
                                     alt={product.name}
@@ -91,7 +91,7 @@ export const FeaturedProducts: React.FC = () => {
                                     <span className="text-xl font-bold text-gray-900 dark:text-white">
                                         ${product.price}
                                     </span>
-                                    <button className="p-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/30 active:scale-95">
+                                    <button className="p-2 rounded-lg bg-primary text-white hover:bg-primary-dark transition-colors shadow-lg shadow-primary/30 active:scale-95">
                                         <Plus size={20} />
                                     </button>
                                 </div>
