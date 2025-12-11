@@ -7,11 +7,7 @@ interface AuthLayoutProps {
   subtitle: string;
 }
 
-export const AuthLayout: React.FC<AuthLayoutProps> = ({
-  children,
-  title,
-  subtitle,
-}) => {
+export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title, subtitle }) => {
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
       {/* Enhanced Background with Vibrant Gradients */}
@@ -28,7 +24,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({
         transition={{
           duration: 20,
           repeat: Infinity,
-          ease: "easeInOut"
+          ease: 'easeInOut',
         }}
       />
       <motion.div
@@ -41,7 +37,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({
         transition={{
           duration: 25,
           repeat: Infinity,
-          ease: "easeInOut"
+          ease: 'easeInOut',
         }}
       />
       <motion.div
@@ -53,7 +49,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({
         transition={{
           duration: 30,
           repeat: Infinity,
-          ease: "linear"
+          ease: 'linear',
         }}
       />
 
@@ -61,7 +57,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({
       <motion.div
         initial={{ opacity: 0, y: 20, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
         className="relative w-full max-w-md"
       >
         {/* Glow Effect */}
@@ -83,9 +79,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({
             <h2 className="text-3xl font-bold mb-3 bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
               {title}
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">
-              {subtitle}
-            </p>
+            <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">{subtitle}</p>
           </motion.div>
 
           {/* Content */}

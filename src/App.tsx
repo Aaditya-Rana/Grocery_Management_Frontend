@@ -29,7 +29,13 @@ function App() {
         <Route path="/share/:shareToken" element={<SharedListPage />} />
 
         {/* Protected Dashboard Routes */}
-        <Route element={<ProtectedRoute><AppLayout /></ProtectedRoute>}>
+        <Route
+          element={
+            <ProtectedRoute>
+              <AppLayout />
+            </ProtectedRoute>
+          }
+        >
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/lists" element={<ListPage />} />
           <Route path="/board" element={<BoardPage />} />

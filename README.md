@@ -47,26 +47,41 @@ Follow these steps to set up the project locally.
 - Node.js (v18 or higher)
 - npm or yarn
 
-### Installation
+### Setup / Run
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd grocery-management-system
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
-3. **Start the development server**
+3. **Set up environment variables**
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   _Modify `.env` with your API URL if different from default._
+
+4. **Start the development server**
+
    ```bash
    npm run dev
    ```
 
-4. **Open in browser**
-   Navigate to `http://localhost:5173` to view the application.
+   The app will be available at [http://localhost:5173](http://localhost:5173).
+
+5. **Build for production**
+   ```bash
+   npm run build
+   ```
 
 ## 📜 Scripts
 
