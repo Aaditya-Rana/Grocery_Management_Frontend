@@ -86,7 +86,7 @@ export const AppLayout: React.FC = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 overflow-hidden flex flex-col">
+      <main className="flex-1 overflow-hidden flex flex-col" style={{paddingTop: '0px'}}>
         {/* Mobile Header */}
         <div className="md:hidden bg-white border-b border-gray-200 p-4 flex items-center justify-between">
           <button

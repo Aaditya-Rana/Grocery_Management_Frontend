@@ -202,9 +202,9 @@ export const ListPage: React.FC = () => {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Main Area */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-9">
             {/* Create New List Form */}
             {showNewListForm && (
               <div className="mb-8 bg-white rounded-xl shadow-sm border border-gray-100 p-6">
@@ -274,7 +274,7 @@ export const ListPage: React.FC = () => {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-3">
             {/* Instructions Card */}
             <div className="bg-linear-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-xl p-6 mb-6 sticky top-4">
               <h3 className="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">

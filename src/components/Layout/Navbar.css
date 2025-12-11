@@ -257,14 +257,9 @@
   padding-top: var(--spacing-4);
 }
 
-/* Spacing for fixed navbar */
-body {
+main{
   padding-top: 120px;
-  /* Adjust based on navbar height */
 }
-
 @media (max-width: 640px) {
-  body {
-    padding-top: 140px;
-  }
+
 }
