@@ -157,10 +157,10 @@ export const BoardPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className=" bg-gray-50 overflow-auto">
       {/* Header */}
       <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 py-6">
+        <div className="max-w-7xl text-center mx-auto px-4 py-6">
           <h1 className="text-3xl font-bold text-gray-900 mb-1">Shopping Task Board</h1>
           <p className="text-gray-600">
             Track your shopping progress efficiently with Kanban board
@@ -200,19 +200,21 @@ export const BoardPage: React.FC = () => {
             </a>
           </div>
         ) : (
-          <div className="overflow-x-auto pb-4">
-            <div className="min-w-max grid grid-cols-5 gap-6 px-4 max-w-full">
-              {columns.map((col) => (
-                <BoardColumn
-                  key={col.id}
-                  status={col.id}
-                  title={col.title}
-                  color={col.color}
-                  items={items.filter((i) => i.status === col.id)}
-                  onMoveItem={handleMoveItem}
-                  onDeleteItem={handleDeleteItem}
-                />
-              ))}
+          <div className="w-full flex justify-center">
+            <div className="overflow-x-auto pb-4">
+              <div className="flex gap-6 px-4">
+                {columns.map((col) => (
+                  <BoardColumn
+                    key={col.id}
+                    status={col.id}
+                    title={col.title}
+                    color={col.color}
+                    items={items.filter((i) => i.status === col.id)}
+                    onMoveItem={handleMoveItem}
+                    onDeleteItem={handleDeleteItem}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         )}

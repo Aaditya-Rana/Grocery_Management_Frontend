@@ -22,7 +22,7 @@ export const AppLayout: React.FC = () => {
     <div className="flex min-h-screen bg-gray-50">
       {/* Sidebar */}
       <aside
-        className={`fixed inset-y-0 left-0 w-64 bg-white border-r border-gray-200 z-40 flex flex-col transition-transform duration-300 ${
+        className={`fixed h-screen inset-y-0 left-0 w-64 bg-white border-r border-gray-200 z-40 flex flex-col transition-all duration-300 ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
         } md:translate-x-0 md:relative`}
       >
@@ -91,7 +91,7 @@ export const AppLayout: React.FC = () => {
         <div className="md:hidden bg-white border-b border-gray-200 p-4 flex items-center justify-between">
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            className="p-2 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer"
           >
             <Menu size={24} className="text-gray-600" />
           </button>
@@ -107,7 +107,7 @@ export const AppLayout: React.FC = () => {
         {/* Overlay for mobile sidebar */}
         {sidebarOpen && (
           <div
-            className="fixed inset-0 bg-black bg-opacity-30 z-30 md:hidden"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm bg-opacity-30 z-30 md:hidden"
             onClick={() => setSidebarOpen(false)}
           ></div>
         )}

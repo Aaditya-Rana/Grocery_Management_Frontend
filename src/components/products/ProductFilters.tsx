@@ -25,7 +25,7 @@ export const ProductFilters: React.FC<ProductFiltersProps> = ({
           placeholder="Search products..."
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
-          className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent shadow-sm"
+          className="w-full text-center placeholder:text-center pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent shadow-sm"
         />
       </div>
       <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0 no-scrollbar">

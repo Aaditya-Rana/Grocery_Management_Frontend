@@ -53,7 +53,7 @@ export const BoardColumn: React.FC<BoardColumnProps> = ({
 
   return (
     <div
-      className={`flex flex-col h-full min-h-[500px] rounded-xl ${colorStyles[color]} border p-4`}
+      className={`flex min-w-60 flex-col h-full min-h-[500px] rounded-xl ${colorStyles[color]} border p-4`}
     >
       <div className="flex justify-between items-center mb-4">
         <h3 className="font-bold text-lg">{title}</h3>

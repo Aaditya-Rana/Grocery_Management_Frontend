@@ -42,19 +42,19 @@ export const SharedListView: React.FC<SharedListViewProps> = ({
   }));
 
   return (
-    <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden max-w-6xl mx-auto">
+    <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden max-w-[77%] mx-auto">
       {/* Header */}
-      <div className="bg-linear-to-r from-primary to-primary-dark p-6 text-white">
+      <div className="bg-linear-to-r from-primary to-primary-dark p-6 text-blue-700">
         <h1 className="text-3xl font-bold mb-2">{list.name}</h1>
         <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
           <div>
             {shareData.shopkeeperName && (
-              <p className="text-blue-100 flex items-center gap-2">
+              <p className="text-blue-500 flex items-center gap-2">
                 <span className="text-lg">🏪</span>
                 Store: <span className="font-semibold">{shareData.shopkeeperName}</span>
               </p>
             )}
-            <p className="text-blue-100">
+            <p className="text-blue-500">
               {doneCount}/{items.length} items done • Status:{' '}
               <span className="font-semibold capitalize">{list.status}</span>
             </p>
@@ -79,7 +79,7 @@ export const SharedListView: React.FC<SharedListViewProps> = ({
           </div>
         ) : (
           <div className="overflow-x-auto">
-            <div className="min-w-max grid grid-cols-5 gap-6 px-2">
+            <div className="flex items-center gap-6 px-2">
               {(
                 [
                   { id: 'to_buy', title: 'To Buy', color: 'gray' },

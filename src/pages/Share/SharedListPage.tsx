@@ -5,6 +5,7 @@ import { useListRealtime } from '../../hooks/useListRealtime';
 import { api } from '../../api/client';
 import axios from 'axios';
 import type { ShareResponse, ItemStatus, ListItem, GroceryList } from '../../types';
+import { useToast } from '../../components/common/ToastProvider';
 
 export const SharedListPage: React.FC = () => {
   const { shareToken } = useParams<{ shareToken: string }>();
@@ -13,6 +14,7 @@ export const SharedListPage: React.FC = () => {
   const [error, setError] = useState('');
   const [shopkeeperName, setShopkeeperName] = useState('');
   const [hasAccepted, setHasAccepted] = useState(false);
+  const { showToast } = useToast();
 
   useEffect(() => {
     if (shareToken) {
@@ -99,6 +101,7 @@ export const SharedListPage: React.FC = () => {
       // Refetch list
       const result = await api.share.viewSharedList(shareToken);
       setData(result);
+      showToast('success', 'List accepted successfully!');
     } catch (err) {
       if (axios.isAxiosError(err)) {
         setError(err.response?.data?.message || 'Failed to accept share');
@@ -136,7 +139,7 @@ export const SharedListPage: React.FC = () => {
       if (data) {
         setData({ ...data, list: updatedList });
       }
-      alert('List marked as completed!');
+      showToast('success', 'List marked as completed!');
     } catch (err) {
       if (axios.isAxiosError(err)) {
         setError(err.response?.data?.message || 'Failed to complete list');

@@ -7,6 +7,7 @@ import { ProductsPage } from './pages/Products/ProductsPage';
 import { ListPage } from './pages/Lists/ListPage';
 import { SharedListPage } from './pages/Share/SharedListPage';
 import { BoardPage } from './pages/Board/BoardPage';
+import { ToastProvider } from './components/common/ToastProvider';
 
 // Simple protected route wrapper
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -19,31 +20,33 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+    <ToastProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
 
-        {/* Public Share Route */}
-        <Route path="/share/:shareToken" element={<SharedListPage />} />
+          {/* Public Share Route */}
+          <Route path="/share/:shareToken" element={<SharedListPage />} />
 
-        {/* Protected Dashboard Routes */}
-        <Route
-          element={
-            <ProtectedRoute>
-              <AppLayout />
-            </ProtectedRoute>
-          }
-        >
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/lists" element={<ListPage />} />
-          <Route path="/board" element={<BoardPage />} />
-        </Route>
+          {/* Protected Dashboard Routes */}
+          <Route
+            element={
+              <ProtectedRoute>
+                <AppLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/lists" element={<ListPage />} />
+            <Route path="/board" element={<BoardPage />} />
+          </Route>
 
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </Router>
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </Router>
+    </ToastProvider>
   );
 }
 
